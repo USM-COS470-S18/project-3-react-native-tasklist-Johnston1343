@@ -10,12 +10,13 @@ import {
 export default class Task extends Component {
     render() {
         return (
-            <View key={this.props.keyval} style={styles.note}>
-                <Text style={styles.noteText}>{this.props.val.date}</Text>
-                <Text style={styles.noteText}>{this.props.val.note}</Text>
+            <View key={this.props.keyval} style={styles.task}>
+                <Text style={styles.taskText}>{this.props.val.date}</Text>
+                <Text style={styles.taskText}>{this.props.val.task}</Text>
+                <Text style={styles.taskText}>Description Placeholder</Text>
 
-                <TouchableOpacity onPress={this.props.deleteMethod} style={styles.noteDelete}>
-                    <Text style={styles.noteDeleteText}>D</Text>
+                <TouchableOpacity onPress={this.props.deleteMethod} style={styles.taskDelete}>
+                    <Text style={styles.taskDeleteText}>D</Text>
                 </TouchableOpacity>
             </View>
         );
@@ -24,19 +25,19 @@ export default class Task extends Component {
 
 
 const styles = StyleSheet.create({
-    note: {
+    task: {
         position: 'relative',
         padding: 20,
         paddingRight: 100,
         borderBottomWidth:2,
         borderBottomColor: '#ededed'
     },
-    noteText: {
+    taskText: {
         paddingLeft: 20,
         borderLeftWidth: 10,
         borderLeftColor: '#E91E63'
     },
-    noteDelete: {
+    taskDelete: {
         position: 'absolute',
         justifyContent: 'center',
         alignItems: 'center',
@@ -46,7 +47,7 @@ const styles = StyleSheet.create({
         bottom: 10,
         right: 10
     },
-    noteDeleteText: {
+    taskDeleteText: {
         color: 'white'
     }
 });

@@ -5,7 +5,8 @@ import {
     StyleSheet,
     TextInput,
     ScrollView,
-    TouchableOpacity
+    TouchableOpacity,
+    Modal
 } from 'react-native';
 
 import Task from './Task';
@@ -20,17 +21,17 @@ export default class Main extends Component {
         };
     }
     render() {
-        let notes = this.state.taskArray.map((val, key)=>{
+        let tasks = this.state.taskArray.map((val, key)=>{
             return <Task key={key} keyval={key} val={val}
                     deleteMethod={()=>this.deleteTask(key)}/>
         });
         return (
             <View style={styles.container}>
                 <View style={styles.header}>
-                    <Text style={styles.headerText}> Tasks </Text>
+                    <Text style={styles.headerText}> To Do List </Text>
                 </View>
                 <ScrollView style={styles.scrollContainer}>
-                    {notes}
+                    {tasks}
                 </ScrollView>
 
                 <View style={styles.footer}>
@@ -57,7 +58,7 @@ export default class Main extends Component {
                 'date':d.getFullYear()+
                 "/"+(d.getMonth()+1) +
                 "/"+ d.getDate(),
-                'note': this.state.taskText
+                'task': this.state.taskText
             });
             this.setState({ taskArray: this.state.taskArray });
             this.setState({taskText:''});
