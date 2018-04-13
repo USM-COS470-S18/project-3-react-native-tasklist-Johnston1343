@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     header: {
-        backgroundColor: '#E91E63',
+        backgroundColor: '#1E90FF',
         alignItems: 'center',
         justifyContent:'center',
         borderBottomWidth: 10,
@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
         zIndex: 11,
         right: 20,
         bottom: 90,
-        backgroundColor: '#E91E63',
+        backgroundColor: '#1E90FF',
         width: 70,
         height: 70,
         borderRadius: 35,
